@@ -108,7 +108,7 @@ class _OpeningViewState extends State<OpeningView> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [Colors.white,Colors.black, Colors.blue])),
-      //_____________________
+      //____________________________________
       padding: EdgeInsets.all(36),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
