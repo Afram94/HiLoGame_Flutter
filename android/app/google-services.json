@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207952160019",
+    "project_id": "hilo-4be7d",
+    "storage_bucket": "hilo-4be7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207952160019:android:3a3e341df2b7ec47d8a6e6",
+        "android_client_info": {
+          "package_name": "com.smartcash.hilo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207952160019-nttga3ovnmf5itqajqtcddje8caqp37o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT1cacxc_2d7z59afGjcCmf74PrC9SlIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207952160019-nttga3ovnmf5itqajqtcddje8caqp37o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
