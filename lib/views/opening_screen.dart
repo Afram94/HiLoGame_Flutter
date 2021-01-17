@@ -101,14 +101,14 @@ class _OpeningViewState extends State<OpeningView> {
 
     return Scaffold(
         //backgroundColor: Color(0xff8c52ff),
-        //Gredient__________________________
+        //Gredient________________________________
         body: Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.white,Colors.red, Colors.blue])),
-      //____________________________________
+              colors: [Colors.white,Colors.red, Colors.green])),
+      //_________________________________________
       padding: EdgeInsets.all(36),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
