@@ -107,7 +107,7 @@ class _OpeningViewState extends State<OpeningView> {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.white,Colors.red, Colors.yellow])),
+              colors: [Colors.white,Colors.red, Colors.blue])),
       //_________________________________________
       padding: EdgeInsets.all(36),
       child: Column(
