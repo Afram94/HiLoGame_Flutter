@@ -5,6 +5,8 @@ import 'package:hilogame/views/opening_screen.dart';
 import 'package:hilogame/views/play_screen.dart';
 import 'package:hilogame/views/profile_screen.dart';
 import 'package:hilogame/views/register_screen.dart';
+import 'package:hilogame/views/settings_screen.dart';
+
 
 class AppRoutes {
   AppRoutes._();
@@ -15,6 +17,7 @@ class AppRoutes {
   static const String logout = "/auth-opening";
   static const String authPlay = "/auth-play";
   static const String authProfile = "/auth-profile";
+  static const String authSettings = "/auth-settings";
 
   static Map<String, WidgetBuilder> define() {
     return {
@@ -24,6 +27,7 @@ class AppRoutes {
       logout: (context) => OpeningView(),
       authPlay: (context) => PlayScreen(),
       authProfile: (context) => ProfileScreen(),
+      authSettings: (context) => SettingScreen(),
     };
   }
 }

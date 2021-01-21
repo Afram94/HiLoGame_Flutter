@@ -37,7 +37,7 @@ class MenuScreen extends StatelessWidget {
                 ),
                 body: TabBarView(children: <Widget>[
                   HomeScreen(),
-                  Settings(),
+                  SettingScreen(),
                   ProfileScreen(),
                 ],),
               )

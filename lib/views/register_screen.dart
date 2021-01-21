@@ -293,7 +293,7 @@ class _RegisterViewState extends State<Register> {
       ),
     );
 
-    final bottom = Column(
+    final buttons = Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -350,7 +350,7 @@ class _RegisterViewState extends State<Register> {
                         fields,
                         Padding(
                           padding: EdgeInsets.only(bottom: 150),
-                          child: bottom,
+                          child: buttons,
                         ),
                       ],
                     ),
