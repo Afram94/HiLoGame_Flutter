@@ -16,7 +16,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   File _image;
   final picker = ImagePicker();
-  int _selectedDestination = 0;
+
+  final myIcon = Icon(Icons.alarm);
+  //int _selectedDestination = 0;
 
   @override
   Future uploadPic(BuildContext context) async {
@@ -125,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
 
-    final settingsButtons = RawMaterialButton(
+    final settingsButton = RawMaterialButton(
       highlightColor: Colors.blue[50],
       elevation: 2.0,
       fillColor: Colors.white,
@@ -142,7 +144,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
     );
 
-    final inviteButtons = Container(
+    final inviteButton = Container(
       child: RawMaterialButton(
         highlightColor: Colors.blue[50],
         splashColor: Colors.blue[50],
@@ -160,7 +162,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Navigator.of(context).pushNamed(AppRoutes.authSettings);
         },
       ),
-     /*  decoration: BoxDecoration(
+      /*  decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.blue[100].withOpacity(0.8),
@@ -186,7 +188,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
  */
-    final historyButtons = RawMaterialButton(
+    final historyButton = RawMaterialButton(
       highlightColor: Colors.blue[50],
       elevation: 2.0,
       fillColor: Colors.white,
@@ -207,51 +209,92 @@ class _ProfileScreenState extends State<ProfileScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       //crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Padding(padding: EdgeInsets.only(right: 25), child: settingsButtons),
+        Padding(padding: EdgeInsets.only(right: 25), child: settingsButton),
         Padding(
             padding: EdgeInsets.only(right: 25, bottom: 20),
-            child: inviteButtons),
-        Padding(padding: EdgeInsets.only(), child: historyButtons),
+            child: inviteButton),
+        Padding(padding: EdgeInsets.only(), child: historyButton),
       ],
     );
 
     final item1 = ListTile(
-      leading: Icon(Icons.favorite),
-      title: Text('Item 1'),
-      selected: _selectedDestination == 0,
+      leading: Icon(
+        Icons.support_agent,
+        color: Colors.grey[700],
+      ),
+      title: Text(
+        'Help and Support',
+        style: TextStyle(color: Colors.grey[700]),
+      ),
+      trailing: Wrap(
+        //spacing: 50, // space between two icons
+        children: <Widget>[
+          Icon(
+            Icons.keyboard_arrow_right_outlined,
+            color: Colors.blue[400],
+            size: 35,
+          ), // icon-1// icon-2
+        ],
+      ),
+      //selected: _selectedDestination == 0,
       onTap: () {
         Navigator.of(context).pushNamed(AppRoutes.authSettings);
       },
     );
-     final item2 = ListTile(
-      leading: Icon(Icons.favorite),
-      title: Text('Item 2'),
-      selected: _selectedDestination == 0,
+    final item2 = ListTile(
+      leading: Icon(Icons.privacy_tip),
+      title: Text(
+        'Privacy',
+        style: TextStyle(color: Colors.grey[700]),
+      ),
+      trailing: Wrap(
+        //spacing: 50, // space between two icons
+        children: <Widget>[
+          Icon(
+            Icons.keyboard_arrow_right_outlined,
+            color: Colors.blue[400],
+            size: 35,
+          ), // icon-1// icon-2
+        ],
+      ),
+      //selected: _selectedDestination == 0,
       onTap: () {
         Navigator.of(context).pushNamed(AppRoutes.authSettings);
       },
     );
-     final item3 = ListTile(
-      leading: Icon(Icons.favorite),
-      title: Text('Item 3'),
-      selected: _selectedDestination == 0,
+    final item3 = ListTile(
+      leading: Icon(Icons.logout),
+      title: Text(
+        'Log out',
+        style: TextStyle(color: Colors.grey[700]),
+      ),
+      trailing: Wrap(
+        //spacing: 50, // space between two icons
+        children: <Widget>[
+          Icon(
+            Icons.keyboard_arrow_right_outlined,
+            color: Colors.blue[400],
+            size: 35,
+          ), // icon-1// icon-2
+        ],
+      ),
+      //selected: _selectedDestination == 0,
       onTap: () {
         Navigator.of(context).pushNamed(AppRoutes.authSettings);
       },
+    );
+    final myDivider = new Divider(
+      color: Colors.grey[700],
     );
 
     final items = Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       //crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        item1,
-        item2,
-        item3
-      ],
+      children: <Widget>[item1, myDivider, item2, myDivider, item3, myDivider],
     );
 
     return Scaffold(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.white,
         body: Container(
           child: Form(
             child: SingleChildScrollView(
@@ -259,13 +302,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Container(
                 height: mq.size.height,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    
-                    profilePicture,
+                    myIcon,
+                    Padding(
+                      padding: EdgeInsets.only(top: 40),
+                      child: profilePicture,
+                    ),
                     buttons,
                     Padding(
-                      padding: EdgeInsets.only(bottom:200),
+                      padding: EdgeInsets.only(bottom: 200),
                       child: items,
                     ),
                   ],
